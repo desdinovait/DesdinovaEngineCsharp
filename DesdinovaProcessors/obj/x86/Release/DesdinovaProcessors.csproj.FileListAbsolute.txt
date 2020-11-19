@@ -1,0 +1,5 @@
+D:\DesdinovaEngineX\DesdinovaProcessors\bin\x86\Release\CustomModelEffectPipeline.dll
+D:\DesdinovaEngineX\DesdinovaProcessors\bin\x86\Release\CustomModelEffectPipeline.pdb
+D:\DesdinovaEngineX\DesdinovaProcessors\obj\x86\Release\ResolveAssemblyReference.cache
+D:\DesdinovaEngineX\DesdinovaProcessors\obj\x86\Release\CustomModelEffectPipeline.dll
+D:\DesdinovaEngineX\DesdinovaProcessors\obj\x86\Release\CustomModelEffectPipeline.pdb

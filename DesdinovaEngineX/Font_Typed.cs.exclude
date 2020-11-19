@@ -1,0 +1,189 @@
+//Using di sistema
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+//Using XNA
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Net;
+using Microsoft.Xna.Framework.Storage;
+//Using Desdinova Engine X
+using DesdinovaModelPipeline;
+using DesdinovaModelPipeline.Helpers;
+namespace DesdinovaModelPipeline
+{
+    public class Font_Typed : Font
+    {
+        //Stati
+        public enum TypeState
+        {
+            Typing,
+            WaitToFinish,
+            Finish
+        }
+
+        //Stato attuale
+        private TypeState state = TypeState.Typing;
+        public TypeState State
+        {
+            get { return state; }
+        }
+
+        //Testo visualizzato
+        private string textTemp = string.Empty;
+        public string Text
+        {
+            get { return textTemp; }
+            set 
+            {
+                textTemp = value;
+                //text = value; 
+            }
+        }
+	
+        //Animazione terminata
+        public bool IsTypedFinished
+        {
+            get
+            {
+                if (state == TypeState.Finish)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        //Intervallo di animazione tra un carattere e il prossimo
+        private float interval = 500.0f;
+        public float Interval
+        {
+            get { return interval; }
+            set { interval = value; }
+        }
+
+        //Da nascondere dopo l'animazione
+        private bool hide = true;
+        public bool Hide
+        {
+            get { return hide; }
+            set { hide = value; }
+        }
+
+        //Intervallo per nascondere il testo
+        private float hideInterval = 2000;
+        public float HideInterval
+        {
+            get { return hideInterval; }
+            set { hideInterval = value; }
+        }
+
+        //Carattere aggiunto durante l'animazione
+        private char additionalChar = ' ';
+        public char AdditionalChar
+        {
+            get { return additionalChar; }
+            set { additionalChar = value; }
+        }
+
+        //Tempo
+        private float currentTime = 0.0f;
+        private float oldTime = 0.0f;
+        private int value = 0;
+
+        //Evento generato al termine dell'animazione
+        public event EventHandler OnFinishTyping;
+
+
+        public Font_Typed(string assetname, Scene contentManager)
+            : base(assetname, contentManager)
+        {
+
+        }
+    
+        public override void Update(GameTime gameTime)
+        {
+            if ((base.IsCreated)&&(base.ToDraw))
+            {
+                if (state == TypeState.Typing)
+                {
+                    //Calcolo dell tempo
+                    if ((currentTime - oldTime) > interval)
+                    {
+                        if (value < this.Text.Length)
+                        {
+                            value = value + 1;
+                        }
+                        else
+                        {
+                            state = TypeState.WaitToFinish;
+                        }
+
+                        //Tempo di fuoco precedente
+                        oldTime = currentTime;
+                    }
+
+                    //Sottostringa da generare 
+                    if (value != this.Text.Length)
+                    {
+                        base.text = this.textTemp.Substring(0, value) + additionalChar;
+                    }
+                    else
+                    {
+                        base.text = this.textTemp.Substring(0, value);
+                    }
+
+                    //Nuovo tempo corrente
+                    currentTime = (float)gameTime.TotalGameTime.TotalMilliseconds;
+                }
+                if (state == TypeState.WaitToFinish)
+                {
+                    //Calcolo dell tempo
+                    if ((currentTime - oldTime) > hideInterval)
+                    {
+                        //Tempo di fuoco precedente
+                        oldTime = currentTime;
+                        state = TypeState.Finish;
+                    }
+
+                    //Nuovo tempo corrente
+                    currentTime = (float)gameTime.TotalGameTime.TotalMilliseconds;
+                }
+                if (state == TypeState.Finish)
+                {
+                    base.ToDraw = false;
+                    if (OnFinishTyping != null)
+                    {
+                        OnFinishTyping(this, null);
+                    }
+                }
+            }
+
+            base.Update(gameTime);
+        }
+
+
+        public override void Draw()
+        {
+            base.Draw();
+        }
+
+        public void Reset()
+        {
+            base.ToDraw = true;
+            currentTime = 0.0f;
+            oldTime = 0.0f;
+            value = 0;
+            state = TypeState.Typing;
+        }
+    
+    }
+}

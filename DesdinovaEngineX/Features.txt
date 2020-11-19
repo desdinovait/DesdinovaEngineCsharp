@@ -1,0 +1,58 @@
+****************************
+***  DESDINOVA ENGINE X  ***
+***   Current Features   ***
+****************************
+
+- Build on Microsoft XNA 3.1 Framework (using C# in Visual Studio 2008)
+- Massive object-oriented implementation
+- Stand-alone external DLL implementation (by project reference)
+- Multiple scene management (with separated thread for load next scene)
+- Per-scene resources and content for dynamic allocation/deallocation
+- 3 directional lights (based on "3-point light rig")
+- 4 dynamic lights per-model (on 3.0 shader cards)
+- Shader fog system (normal and height fog)
+- Material system (flat, bump, reflection, transparent, specular, etc.)
+- Anchor system for multiple jerarchical entities
+- Camera frustrum culling, fog culling, distance culling
+- Simple collision detection via bounding spheres definied in 3D modeler
+- Pre-created post processing effects (and user-defined possibilities)
+- Movie effects (fade in/out, 16/9, etc.)
+- Normal spritefont and typedfont to simulate keyboard writing (with 2D shadow support)
+- Sky sphere with cubemap texture
+- Lens flare effect (with occlusion query, if available)
+- 3D quads and billboard implementation for 2D/3D effects
+- 2D panels with frame animation support
+- 3D sound effect and background musics
+- 2D lines, 3D lines, grids and curves
+- InfoPanel for runtime debug informations (verticies count, mesh count, memory allocation, etc.)
+- Support keyboard, mouse and joypad (Non-XBox360 also)
+- HTML based log system with accurate error reporting
+
+
+
+****************************
+***  DESDINOVA ENGINE X  ***
+***  Minimum Requisites  ***
+****************************
+
+- Intel PentiumIV 2Ghz (or AMD equivalent)
+- Microsoft Windows XP SP2 (with XNA 3.1 and Framework.NET 3.1)
+- 512Gb RAM
+- Vertex/Pixel Shader 2.0 video card with 64Mb VRam
+
+
+
+****************************
+***  DESDINOVA ENGINE X  ***
+***  Raccom. Requisites  ***
+****************************
+
+- Intel Core2Duo 2.33Ghz (or AMD equivalent)
+- Microsoft Windows XP SP3 (with XNA 3.1 and Framework.NET 3.1)
+- 2Gb RAM
+- Vertex/Pixel Shader 3.0 video card (for dynamic lights effect and shadows) with 256Mb VRam
+
+
+
+
+

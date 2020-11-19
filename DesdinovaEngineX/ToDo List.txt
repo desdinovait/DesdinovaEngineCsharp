@@ -1,0 +1,69 @@
+****************************
+***  DESDINOVA ENGINE X  ***
+***      ToDo LIST       ***
+****************************
+
+In sospeso:
+-------------
+
+--> Gestione degli errori in generale (try/catch e anche controllo esistenza dei files caricati tipo modelli/textures) e ToDraw in tutte
+	Poi fare un test di tutte (isCreated e toDraw)
+
+--> Usare i service per la scena corrente e non la parentScene ?
+    EngineScene pScene = (EngineScene)Core.Service.GetService(typeof(EngineScene));
+    Core.SetCurrentScene fa già l'inserimento del servizio della scena :-)
+
+--> Problemi di memoria al rilascio della scena corrente :-S
+
+--> Inserimento di un unico content project con XNA 3.0 (http://blogs.msdn.com/astebner/archive/2008/10/10/8994591.aspx)
+
+--> Rotazione di un modello in base alla direzione (vedere bene QuaternionRotation.zip ) ottimo!
+
+--> Rotazione oggetti, qui: http://blogs.msdn.com/dejohn/archive/2007/01/15/you-spin-me-round.aspx
+
+--> Vedere funzione Matrix.CreateWorld() potrebbe essere utile per la rotazione in base alla direzione del caccia
+    Vdere anche 3_Rotation_towards_Direction nel recipesBook di riemers, cap4
+
+--> Rifrazione con fresnel term (vedere CustomModelEffect) facile
+
+--> Sviluppare parallax map come bump map, non è difficile (vedere ottimo dphoware NormalParallaxMapping.zip)...c'è già un inizio(material,lighteffect,ecc)
+
+--> Inserire anche la possibilità della SpecularTexture (invece del SpecularColor), non è difficle (vedere MaterialsAndLights.Zip)
+    if(specularTexEnabled)
+    {
+        specularColor *= tex2D(specularSampler, input.TexCoords);
+    }
+    Per includerla bisogna usare gli OpaqueData dell'XNA 3.0 (il 2.0 non esporta la specularmap, solo colormap e bumpmap)
+    Si potrebbe fare in modo che se viene trovata la specularmap usa quella altrimenti usa il value dello specular settano nel materiale Maya
+    Per crearla usare ShaderMapCL 1.1.1
+
+--> Distance culling (mesh troppo lontane non vengono renderizzate, oppure non vengono illuminate, oppure usare illuminazione parziale/vertex)
+     
+--> Lightcullingreduction (cap 5.7 pag 498 - GameProgrammingGems 6)
+   
+--> Finire LensFlare con flash e altre features (se non è supportata la Query usare il raggio con le collision spheres)
+    e deve esporre il flag IsOccluded che può essere utile per animazioni o luci dinamihe
+	Controllare il dispendio di FPS da parte della query, abbastanza pesante
+
+--> Implementare distruttore e Dispose ( dove necessario )
+
+--> Camera perfezionata (AtmosphericScatteringV2.zip)
+
+--> AI (vedere GenericXNAExampleAIFSM.zip)
+    vedere sopratutto libro "Core Techniques and Algorithms in Game Programming.chm"
+    vedere classe Enemy già iniziata
+
+
+
+Possibili sviluppi (non prioritari):
+--------------------------------------------------
+
+--> Integrazione motore fisico ( http://www.codeplex.com/JigLibX )
+
+--> Bounding Box OOBB (vedere: XNABoxCollider.zip - OTTIMOOOO e anche InstancedMatrixTutorial.zip)
+
+--> Particles system
+
+--> Font con Bitmap (vedere: Simple Game Template.zip)
+
+--> Skinned animation (vedere: CreatorsSkinningSample.zip OTTIMo oppure dwarftutorial.zip o skinningsample.zip)

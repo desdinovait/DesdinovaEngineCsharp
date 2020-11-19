@@ -1,0 +1,2 @@
+D:\DesdinovaEngineX\SceneGraph\SceneGraph\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\SceneGraph\SceneGraph\Content\obj\x86\Debug\ResolveAssemblyReference.cache

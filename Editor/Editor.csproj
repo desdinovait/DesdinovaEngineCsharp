@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectGuid>{EDFA3DC5-A1DD-482E-B8ED-114989EFEFE4}</ProjectGuid>
+    <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EditorEngine</RootNamespace>
+    <AssemblyName>EDLibitum</AssemblyName>
+    <XnaFrameworkVersion>v3.1</XnaFrameworkVersion>
+    <XnaPlatform>Windows</XnaPlatform>
+    <XnaCrossPlatformGroupID>a9793674-2ee7-4e16-80c4-08940f83eacf</XnaCrossPlatformGroupID>
+    <ApplicationIcon>start_here.ico</ApplicationIcon>
+    <Thumbnail>
+    </Thumbnail>
+    <XnaUpgrade>
+    </XnaUpgrade>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>40</FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>D:\DesdinovaEngineX\Backup1\</UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/EDLibitum/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE%3bWINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>True</XnaCompressContent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d" />
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d" />
+    <Reference Include="mscorlib">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_About.Designer.cs">
+      <DependentUpon>Form_About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Camera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Camera.Designer.cs">
+      <DependentUpon>Form_Camera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Element.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Element.Designer.cs">
+      <DependentUpon>Form_Element.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Enemy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Enemy.Designer.cs">
+      <DependentUpon>Form_Enemy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Path.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Path.Designer.cs">
+      <DependentUpon>Form_Path.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Player.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Player.Designer.cs">
+      <DependentUpon>Form_Player.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditorMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditorMenu.Designer.cs">
+      <DependentUpon>EditorMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_PowerUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_PowerUp.Designer.cs">
+      <DependentUpon>Form_PowerUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PositionBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PositionBar.Designer.cs">
+      <DependentUpon>PositionBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Scene_Loading.cs" />
+    <Compile Include="Scene_Main.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Game.ico" />
+    <Content Include="start_here.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <NestedContentProject Include="Content\Content.contentproj">
+      <Project>207486ba-0278-49cd-baf1-b366c724d123</Project>
+      <Visible>False</Visible>
+    </NestedContentProject>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DesdinovaEngineX\DesdinovaEngineX.csproj">
+      <Project>{430B4BE3-21E9-4BB9-A702-90EAFD06E436}</Project>
+      <Name>DesdinovaEngineX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SorsAdversa\SorsAdversa.csproj">
+      <Project>{C518DDD1-AFAE-4CFD-86C9-09848A9D95CC}</Project>
+      <Name>SorsAdversa</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form_About.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Camera.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Camera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Element.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Element.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Enemy.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Enemy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Path.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Path.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Player.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Player.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditorMenu.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditorMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_PowerUp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_PowerUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PositionBar.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PositionBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Xna.Framework.3.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft XNA Framework Redistributable 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" Condition="" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

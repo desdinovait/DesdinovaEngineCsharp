@@ -1,0 +1,16 @@
+D:\DesdinovaEngineX\SceneGraph\SceneGraph\bin\x86\Debug\SceneGraph.exe
+D:\DesdinovaEngineX\SceneGraph\SceneGraph\bin\x86\Debug\SceneGraph.pdb
+D:\DesdinovaEngineX\SceneGraph\SceneGraph\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\DesdinovaEngineX\SceneGraph\SceneGraph\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\DesdinovaEngineX\SceneGraph\SceneGraph\obj\x86\Debug\SceneGraph.exe
+D:\DesdinovaEngineX\SceneGraph\SceneGraph\obj\x86\Debug\SceneGraph.pdb
+D:\DesdinovaEngineX\SceneGraph\SceneGraph\bin\x86\Debug\Content\Star.xnb
+D:\DesdinovaEngineX\SceneGraph\SceneGraph\bin\x86\Debug\Content\Star.wmv
+D:\SceneGraph\SceneGraph\bin\x86\Debug\Content\Star.xnb
+D:\SceneGraph\SceneGraph\bin\x86\Debug\Content\Star.wmv
+D:\SceneGraph\SceneGraph\bin\x86\Debug\SceneGraph.exe
+D:\SceneGraph\SceneGraph\bin\x86\Debug\SceneGraph.pdb
+D:\SceneGraph\SceneGraph\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\SceneGraph\SceneGraph\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\SceneGraph\SceneGraph\obj\x86\Debug\SceneGraph.exe
+D:\SceneGraph\SceneGraph\obj\x86\Debug\SceneGraph.pdb

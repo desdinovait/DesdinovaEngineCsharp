@@ -1,0 +1,31 @@
+****************************
+***  SORS ADVERSA GAME   ***
+***      ToDo LIST       ***
+****************************
+
+
+Usare Vector3.Clamp sulla posizione del player
+
+Vedere filmato di EveOnline (EVENeverFadesLarge.wmv) per studiare le esplosioni, luci e motori caccia
+
+Rinominare Weapon con Upgrade (o simile) perchè non include solo le armi ma anche gli enanchements
+
+Creare una lista di Nebule in stile Homeworld?
+
+Creare una Weapon_Generic che possa generare ogni tipo di Bullet passando degli argomenti
+in modo da usarla per le armi dei nemici (qualli che fisicamente e per semplicità non hanno
+un'ancora con annesso modello dell'arma)
+
+vedere ParticleSample.zip in Creators 2.0
+per gestione della lista dei bullet
+creare lista bullet con Queue
+...vedere confronto con class Pool attualmente implementata nel motore
+
+tipo di bullet da inizializzare e rivedere gestione
+distance e velocity (seeker)
+
+La weapon, invece di generare colpi,
+non potrebbe generare una lista
+di colpi ??
+List<Weapon>...da vedere
+

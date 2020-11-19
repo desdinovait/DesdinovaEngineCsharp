@@ -1,0 +1,2 @@
+D:\DesdinovaEngineX\SorsAdversa\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\DesdinovaEngineX\SorsAdversa\Content\obj\x86\Debug\Audio\audio.xml

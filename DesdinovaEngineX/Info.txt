@@ -1,0 +1,101 @@
+****************************
+***  DESDINOVA ENGINE X  ***
+***      Info LIST       ***
+****************************
+
+Data inizio: 03/11/2007
+
+
+1. L'unità di misura degli angoli è il Grado.
+   Le classi di base si preoccupano di trasformarli in radianti tramite MathHelper.ToRadians(...)
+
+2. L'unità di misura del tempo sono i millisecondi (ms)
+   Dunque 1 secondo è indicato come 1000 e 25 secondi sono indicati come 25000
+
+3. L'unità di misura della velocità è u/t (unità di spazio su tempo)
+
+4. Ricordarsi di aggiungere (tramite "Add reference") il riferimento alla DLL delle DirectInput chiamata "Microsoft.DirectX.DirectInput" a
+   quella "Microsoft.DirectX" dalla quale dipende la precedente e impostare le loro proprietà "Copy Local" su TRUE in ogni applicazione che viene creata
+   con il motore grafico. Questo perchè il prodotto distribuito potrebbe non trovare tali DLL installate sul PC ospite e generare
+   un errore generico tipo Io.System.Filenotfoundexception
+
+5. Maya: E' necessario ricordare che non è possibile, attualmente, fare la copia o il duplicato di un modello.
+   Usare l'opzione "Edit->Duplicate Special" e impostarlo a "World", se si appartona delle modifiche alla scalatura ricordarsi di freezare la matrice
+
+6. Maya: Per una corretta realizzazione delle bounding sphere (per le collisioni e il culling) è necessario, prima di esportare
+   il modello, freezare SEMPRE e SOLO le matrici di scalatura (usare Modify->FreezeTransformation)
+
+7. Maya: Per mappare correttamento il modello è necessario utilizzare il menu PolygonUVs e le varie mappature (planar, spherical ecc)
+   altrimenti verrà usata la mappatura base quadratica
+ 
+8. Maya: Le sfere di collisione sono definite tramite dei "Joint Tool" (sotto la tab Animation).
+   Per definire il raggio della sfera di collisione usare la proprietà Scale di tale Joint ("nel menu Transform Attributes").
+   Visivamente però non verrà visualizzata la scalatura perchè i joint non necessitano effettivamente di scalatura; per ovviare a questo
+   inconveniente puramente visivo utilizzare la proprietà Radius sotto il menu "Joint" impostato ad un valore doppio rispetto a "Scale"
+   (questa modifica non influirà sulle dimensioni del raggio della sfera di collisione, serve solo per avere un'idea dell'occupazione
+   spaziale di tale sfera); lo stesso vale quindi per una sfera alla quale si possono ridurre notevolmente i vertici.
+   
+9. Maya: Con l'impostazione delle normali si posso ottenere risultati incredibili; creando un cilindro con un numero basso di faccie è possibile, tramite
+   il menu Normals->Avarange Normals ottenere in tutto e per tutto un cilindo che sembra avere un numero infinito di faccie (lo si nota ovviamente solo
+   dopo aver applicato lo shader correttamente).
+   
+10.Maya: Usare sempre il "Phong Material" impostato correttamente
+
+11.Maya: Le parti trasparenti disegnarle per ultime   
+
+12.Maya: La creazione di gruppi di mesh potrebbe portare ad un calcolo errato dei vertici in scena
+
+13.Maya: Definando l'attributo "Reflection" (di tipo float) per una qualsiasi mesh si imposta il valore di riflessione della stessa.
+   Lo si può fare nel menu "Attributes->Add Attribute" e poi nel voce "Extra Attributes" della mesh stessa. Si consiglia un valore tra 0.0 e 1.0 
+
+14.E' possibile prelevare le informazioni delle bones del modello (usate anche per i Triggers) tramite XModel.GetBoneTransform(string).
+   Si consiglia di farlo "non-a-runtime" (cioè non direttamente in Update o Draw) perchè la ricerca tramite stringa potrebbe essere dispendiosa.
+
+15.La matrice ExternMatrix serve per passare all'oggetto la matrice dell'oggetto padre.
+
+16.Ci sono problemi noti in XNA con la funzione Apply3D() se in Windows sono impostati 4 autoparlanti.
+   Di fatto, per ora, l'engine di XACT funziona solo con audio "Stereo" oppure "5.1"
+
+17.Durante il debug dell'applicazione viene generato un errore identificato come "Loader Lock" generato
+   probabilmente per eccezioni non gestite dovute all'inclusione di librerie esterne (es:DirectInput usata per il GamePad);
+   Questo è un problema noto in VS2005 che può essere aggirato togliendo la spunta al controllo dal menu
+   Debug-->Exceptions-->Managed Debugging Assistant-->LoaderLock
+   
+18.Il supporto al controller analogico è dato dalle proprietà AnalogLeft,AnalogRight,AnalogUp,AnalogDown
+   di GameControllerState che ritornano un valore compreso tra 0.0f(pos. iniziale) e 1.0f(pos. finale) da usare come moltiplicatore
+   per i movimenti (ovviamente il gamepad/joystick deve essere calibrato perfettamente)
+   
+19.Per alcune classi, durante l'inizializzazione, è necessario passare un ContentManager per il caricamento delle risorse.
+   Questo content manager può essere quello di base in Core.Content oppure il content manager creato direttamente dalla
+   classe base della scena a cui si può accedere tramite this.SceneContent oppure base.SceneContent (o semplic. SceneContent)
+   Esso serve esclusivamente perchè al termine del livello tutte le risorse vengano deallocate tramite SceneContent.Unload();
+   questa procedura di inizializzazione e di rilascio avviene automaticamente.
+   
+20.Nella scena, il supporto agli input è dato dalla proprietà della classe base.SceneInput oppure this.SceneInput
+   (o semplicemente SceneInput); l'inizializzazione e il rilascio sono automatici.
+   E' possibile usare un proprio gestore degli input istanziando la classe Input ma non è solitamente necessario.
+   
+21.Nella scena, il supporto alla camera è dato dalla proprietà della classe base.SceneCamera oppure this.SceneCamera
+   (o semplicemente SceneCamera); l'inizializzazione e il rilascio sono automatici.
+   E' possibile usare un proprio gestore della camera istanziando la classe Camera (per camera multiple)
+ 
+22.La camera espone un metodo Camera.Shake(ms, offX, offY) che permette di scuotere il punto di target della stessa;
+   Questa funzione si rivela utile per simulare i colpi subiti dal giocatore.
+
+23.La proprietà Core.SceneTexture contiene una texture di screenshot della scena precedentemente caricata.
+   Questa può essere utile se si vuole realizzare una scena che simula un menu contestuale alla scena corrente;
+   di fatto è necessario creare uno Sprite con tale texture grande come lo schermo e usarlo come sfondo alla 
+   scena che crea il menu (verrà così data l'illusione di essere ancora nella scena corrente) 
+
+24.Internamente tutti i SaveStateMode sono impostati su None e il RenderStates sono reimpostati manualmente subito dopo la 
+   scrittura a video. Questo velocizza il processo perchè SaveStateMode.SaveState salva tutti gli stati
+   attuali e non solamente quelli modificati dalla procedura e ripristinarli sarebbe dispendioso per la scheda video.
+   
+25.Durante il passaggio da una scena all'altra è possibile commettere degli errori di allocazione e settaggio
+   del rilascio della scena. Per indicare possibile errori sono stati definiti dei DumbScreen di colori diversi
+   che indicano il tipo di errore:
+   RedDumb (backbuffer colorato di rosso, Color.Red): Non è stata definita la scena corrente (oppure è già stata rilasciata)
+   GreenDumb (backbuffer colorato di verde, Color.GreenYellow, può essere modificato con DefaultLoadingColor): Non è stata definita la scena di caricamento
+   BlueDumb (backbuffer colorato di blu): Errore grave durante l'allocazione della scena (generico)
+
+26.La funzione ToggleFullscreen permette di cambiare la modalità di visualizzazione in base alla risoluzione impostata inizialmente
